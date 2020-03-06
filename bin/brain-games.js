@@ -1,2 +1,7 @@
 #!/usr/bin/env node
-console.log('Welcome to the Brain Games!');
+import WhatYourName from './src/index.js';
+
+console.log('Welcome to the Brain Games!\n');
+
+WhatYourName();
+
