@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { gameCalc } from '../index.js';
+import { game, calc, greeting } from '../index.js';
 
-gameCalc();
+game(greeting('What is the result of the expression?'), calc);

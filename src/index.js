@@ -1,40 +1,14 @@
 import readlineSync from 'readline-sync';
 
+let name;
+let correctAnswer;
+
+// Приветствие
 export const greeting = (str) => {
   console.log('Welcome to the Brain Games!\n');
-  const name = readlineSync.question('May I have your name? ');
+  name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(str);
-};
-
-export const gameEven = () => {
-  let count = 0;
-  let num;
-  let correctAnswer;
-
-  console.log('Welcome to the Brain Games!\n');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  while (count < 3) {
-    console.log('Question: ', num = Math.floor(Math.random() * Math.floor(100)));
-    const answer = readlineSync.question('Your answer: ');
-    num % 2 === 0 ? correctAnswer = 'yes' : correctAnswer = 'no';
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-      count += 1;
-      continue;
-    }
-    console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-    return console.log(`Let's try again, ${name}!`);
-  }
-  return console.log(`Congratulations, ${name}!`);
-};
-
-// Генерация рандомного числа
-const random = (num) => {
-  const x = Math.floor(Math.random() * Math.floor(num));
-  return x;
 };
 
 // Функция арифметической операции, операнд которой получен из строки
@@ -48,22 +22,31 @@ const arifmOper = (num1, num2, oper) => {
   return num1 * num2;
 };
 
-export const gameCalc = () => {
-  let count = 0;
-  let correctAnswer;
-  const str = '+-*';
-  let num1;
-  let num2;
-  let x;
+// Условия и проверка Игра №1 "Четный"
+export const even = () => {
+  let num;
+  console.log('Question: ', num = Math.floor(Math.random() * Math.floor(100)));
+  num % 2 === 0 ? correctAnswer = 'yes' : correctAnswer = 'no';
+};
 
-  console.log('Welcome to the Brain Games!\n');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log('What is the result of the expression?');
+// Условия и проверка Игра №2 "Калькулятор"
+export const calc = () => {
+  const znak = '+-*';
+  const x = Math.floor(Math.random() * Math.floor(10));
+  const y = Math.floor(Math.random() * Math.floor(10));
+  const z = znak[Math.floor(Math.random() * Math.floor(3))];
+  correctAnswer = String(arifmOper(x, y, z));
+  return console.log('Question: ', x + z + y);
+};
+
+// Общий игровой движок
+export const game = (privetstvie, uslovie) => {
+  let count = 0;
+
+  privetstvie;
   while (count < 3) {
-    console.log('Question: ', num1 = random(10), x = str[random(3)], num2 = random(10));
+    uslovie();
     const answer = readlineSync.question('Your answer: ');
-    correctAnswer = String(arifmOper(num1, num2, x));
     if (answer === correctAnswer) {
       console.log('Correct!');
       count += 1;
