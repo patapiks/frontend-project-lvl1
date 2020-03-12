@@ -36,7 +36,25 @@ export const calc = () => {
   const y = Math.floor(Math.random() * Math.floor(10));
   const z = znak[Math.floor(Math.random() * Math.floor(3))];
   correctAnswer = String(arifmOper(x, y, z));
-  return console.log('Question: ', x + z + y);
+  return console.log('Question: ', x, z, y);
+};
+
+// Условия и проверка Игра №3 "НОД"
+export const nod = () => {
+  let i = 1;
+  const x = Math.floor(Math.random() * Math.floor(100));
+  const y = Math.floor(Math.random() * Math.floor(100));
+
+  while (i < x + 1) {
+    if (x === 0 || y === 0) {
+      correctAnswer = 1;
+    }
+    if (x % i === 0 && y % i === 0) {
+      correctAnswer = i;
+    }
+    i += 1;
+  }
+  return console.log('Question: ', x, y);
 };
 
 // Общий игровой движок
