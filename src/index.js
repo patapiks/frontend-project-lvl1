@@ -65,38 +65,31 @@ export const gcd = () => {
 // Условия и проверка Игра №4 "Арифметическая прогрессия"
 export const progression = () => {
   const list = [];
-  const i = Math.floor(Math.random() * Math.floor(10));
-  const x = Math.floor(Math.random() * Math.floor(10));
-  let count = 0;
+  const addition = Math.floor(Math.random() * Math.floor(10));
+  const position = Math.floor(Math.random() * Math.floor(10));
   let result = 0;
 
-  while (count < 10) {
-    result += i;
+  for (let i = 0; i < 10; i += 1) {
+    result += addition;
     list.push(result);
-    count += 1;
   }
-  correctAnswer = String(list[x]);
-  list[x] = '..';
+  correctAnswer = String(list[position]);
+  list[position] = '..';
   return console.log(list.join(' '));
 };
 
 // Условия и проверка Игра №5 "Простое ли число?"
 export const prime = () => {
   const x = Math.floor(Math.random() * Math.floor(10));
-  let count = 2;
+  correctAnswer = 'yes';
 
   if (x < 2) {
     correctAnswer = 'no';
   }
-  if (x === 2) {
-    correctAnswer = 'yes';
-  }
-  while (count < x) {
-    if (x % count === 0) {
+  for (let i = 2; i < x; i += 1) {
+    if (x % i === 0) {
       correctAnswer = 'no';
-      break;
-    } else correctAnswer = 'yes';
-    count += 1;
+    }
   }
   return console.log(x);
 };
