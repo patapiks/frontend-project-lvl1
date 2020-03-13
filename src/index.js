@@ -40,17 +40,17 @@ export const calc = () => {
 };
 
 // Условия и проверка Игра №3 "НОД"
-export const nod = () => {
+export const gcd = () => {
   let i = 1;
-  const x = Math.floor(Math.random() * Math.floor(100));
-  const y = Math.floor(Math.random() * Math.floor(100));
+  const x = Math.floor(Math.random() * Math.floor(10));
+  const y = Math.floor(Math.random() * Math.floor(10));
 
   while (i < x + 1) {
     if (x === 0 || y === 0) {
       correctAnswer = 1;
     }
     if (x % i === 0 && y % i === 0) {
-      correctAnswer = i;
+      correctAnswer = String(i);
     }
     i += 1;
   }
@@ -107,10 +107,10 @@ export const game = (privetstvie, uslovie) => {
     if (answer === correctAnswer) {
       console.log('Correct!');
       count += 1;
-      continue;
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      return console.log(`Let's try again, ${name}!`);
     }
-    console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-    return console.log(`Let's try again, ${name}!`);
   }
   return console.log(`Congratulations, ${name}!`);
 };
