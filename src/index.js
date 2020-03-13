@@ -26,15 +26,20 @@ const arifmOper = (num1, num2, oper) => {
 export const even = () => {
   let num;
   console.log('Question: ', num = Math.floor(Math.random() * Math.floor(100)));
-  num % 2 === 0 ? correctAnswer = 'yes' : correctAnswer = 'no';
+  if (num % 2 === 0) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
+  }
+  // num % 2 === 0 ? correctAnswer = 'yes' : correctAnswer = 'no'; -- Ругается линтер
 };
 
 // Условия и проверка Игра №2 "Калькулятор"
 export const calc = () => {
-  const znak = '+-*';
+  const operation = '+-*';
   const x = Math.floor(Math.random() * Math.floor(10));
   const y = Math.floor(Math.random() * Math.floor(10));
-  const z = znak[Math.floor(Math.random() * Math.floor(3))];
+  const z = operation[Math.floor(Math.random() * Math.floor(3))];
   correctAnswer = String(arifmOper(x, y, z));
   return console.log('Question: ', x, z, y);
 };
@@ -97,12 +102,12 @@ export const prime = () => {
 };
 
 // Общий игровой движок
-export const game = (privetstvie, uslovie) => {
+export const game = (str, condition) => {
   let count = 0;
 
-  privetstvie;
+  greeting(str);
   while (count < 3) {
-    uslovie();
+    condition();
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
       console.log('Correct!');
