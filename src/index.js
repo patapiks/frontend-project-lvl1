@@ -42,7 +42,7 @@ export const calc = () => {
   const z = operation[Math.floor(Math.random() * Math.floor(3))];
   correctAnswer = String(arifmOper(x, y, z));
   return console.log('Question: ', x, z, y);
-}
+};
 
 // Условия и проверка Игра №3 "НОД"
 export const gcd = () => {
