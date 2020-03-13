@@ -57,6 +57,45 @@ export const nod = () => {
   return console.log('Question: ', x, y);
 };
 
+// Условия и проверка Игра №4 "Арифметическая прогрессия"
+export const progression = () => {
+  const list = [];
+  const i = Math.floor(Math.random() * Math.floor(10));
+  const x = Math.floor(Math.random() * Math.floor(10));
+  let count = 0;
+  let result = 0;
+
+  while (count < 10) {
+    result += i;
+    list.push(result);
+    count += 1;
+  }
+  correctAnswer = String(list[x]);
+  list[x] = '..';
+  return console.log(list.join(' '));
+};
+
+// Условия и проверка Игра №5 "Простое ли число?"
+export const prime = () => {
+  const x = Math.floor(Math.random() * Math.floor(10));
+  let count = 2;
+
+  if (x < 2) {
+    correctAnswer = 'no';
+  }
+  if (x === 2) {
+    correctAnswer = 'yes';
+  }
+  while (count < x) {
+    if (x % count === 0) {
+      correctAnswer = 'no';
+      break;
+    } else correctAnswer = 'yes';
+    count += 1;
+  }
+  return console.log(x);
+};
+
 // Общий игровой движок
 export const game = (privetstvie, uslovie) => {
   let count = 0;
