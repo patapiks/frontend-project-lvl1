@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { condition } from './games/gameEven.js'
 
 let name;
 let correctAnswer;
@@ -22,7 +23,8 @@ const arifmOper = (num1, num2, oper) => {
   return num1 * num2;
 };
 
-// Условия и проверка Игра №1 "Четный"
+//* Условия и проверка Игра №1 "Четный"
+/*
 export const even = () => {
   let num;
   console.log('Question: ', num = Math.floor(Math.random() * Math.floor(100)));
@@ -33,6 +35,7 @@ export const even = () => {
   }
   // num % 2 === 0 ? correctAnswer = 'yes' : correctAnswer = 'no'; -- Ругается линтер
 };
+*/
 
 // Условия и проверка Игра №2 "Калькулятор"
 export const calc = () => {
@@ -95,12 +98,12 @@ export const prime = () => {
 };
 
 // Общий игровой движок
-export const game = (str, condition) => {
+export const game = (str) => {
   let count = 0;
 
   greeting(str);
   while (count < 3) {
-    condition();
+    let correctAnswer = condition();
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
       console.log('Correct!');
