@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { game, progression } from '../index.js';
+import startGame from '../games/gameProgression.js';
 
-game('Find the greatest common divisor of given numbers.', progression);
+startGame();
