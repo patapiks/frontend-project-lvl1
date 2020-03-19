@@ -9,7 +9,9 @@ const game = (str, condition) => {
   console.log(`Hello, ${name}!`);
   console.log(str);
   for (let count = 0; count < rounds; count += 1) {
-    const correctAnswer = condition();
+    const getCondition = condition();
+    console.log('Question: ', getCondition[1]);
+    const correctAnswer = getCondition[0];
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
       console.log('Correct!');

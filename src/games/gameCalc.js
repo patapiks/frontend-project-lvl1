@@ -14,8 +14,8 @@ const calc = () => {
   const y = Math.floor(Math.random() * Math.floor(10));
   const z = operation[Math.floor(Math.random() * Math.floor(3))];
   const correctAnswer = String(arifmOper(x, y, z));
-  console.log('Question: ', x, z, y);
-  return correctAnswer;
+  const question = String(x + z + y);
+  return [correctAnswer, question];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры

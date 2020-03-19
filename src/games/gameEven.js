@@ -3,12 +3,11 @@ import game from '../index.js';
 // Вопрос/Ответ
 const even = () => {
   let correctAnswer;
-  let num;
-  console.log(num = Math.floor(Math.random() * Math.floor(100)));
+  const num = Math.floor(Math.random() * Math.floor(100));
   if (num % 2 === 0) {
     correctAnswer = 'yes';
   } else correctAnswer = 'no';
-  return correctAnswer;
+  return [correctAnswer, num];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры

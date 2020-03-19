@@ -9,8 +9,8 @@ const prime = () => {
   for (let i = 2; i < x; i += 1) {
     if (x % i === 0) correctAnswer = 'no';
   }
-  console.log(x);
-  return correctAnswer;
+  const question = x;
+  return [correctAnswer, question];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры

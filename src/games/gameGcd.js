@@ -16,8 +16,8 @@ const gcd = () => {
     }
     i += 1;
   }
-  console.log('Question: ', x, y);
-  return correctAnswer;
+  const question = `${x} and ${y}`;
+  return [correctAnswer, question];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры

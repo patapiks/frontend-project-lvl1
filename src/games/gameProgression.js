@@ -12,8 +12,8 @@ const progression = () => {
   }
   const correctAnswer = String(list[position]);
   list[position] = '..';
-  console.log(list.join(' '));
-  return correctAnswer;
+  const question = list.join(' ');
+  return [correctAnswer, question];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры
