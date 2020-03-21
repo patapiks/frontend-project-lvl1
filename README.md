@@ -1,4 +1,4 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/339d26480e356bade344/maintainability)](https://codeclimate.com/github/patapiks/frontend-project-lvl1/maintainability)
 ![Node CI](https://github.com/patapiks/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
 
 https://asciinema.org/a/9UrpP0ipHDqKzbIwJK0Jj9wJ6
