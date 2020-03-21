@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
 
 // Общий игровой движок
-const game = (str, condition) => {
+const game = (ruleOfTheGame, condition) => {
   const rounds = 3;
 
   console.log('Welcome to the Brain Games!\n');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log(str);
+  console.log(ruleOfTheGame);
   for (let count = 0; count < rounds; count += 1) {
     const getCondition = condition();
     console.log('Question: ', getCondition[1]);
