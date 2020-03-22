@@ -17,7 +17,8 @@ const progression = () => {
     result += addition;
     list.push(result);
   }
-  const correctAnswer = String(list[position]);
+  // const correctAnswer = String(list[position]);
+  const correctAnswer = String(list[0] + addition * position);
   list[position] = '..';
   const question = list.join(' ');
   return [correctAnswer, question];
