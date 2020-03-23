@@ -6,28 +6,19 @@ const generateRandomNum = (range) => {
   return num;
 };
 
+// Вычисление НОД
 const nod = (x, y) => {
-  let i = 1;
-  let nodValue;
-  if (x === 0 || y === 0) {
-    nodValue = '1';
-    return nodValue;
-  }
-  while (i < x + 1) {
-    if (x % i === 0 && y % i === 0) {
-      nodValue = String(i);
-    }
-    i += 1;
-  }
-  return nodValue;
+  const result = x ? nod(y % x, x) : y;
+  return result;
 };
+
 
 // Условия и проверка Игра №3 "НОД"
 const gcd = () => {
   const x = generateRandomNum(10);
   const y = generateRandomNum(10);
 
-  const correctAnswer = nod(x, y);
+  const correctAnswer = String(nod(x, y));
   const question = `${x} and ${y}`;
   return [correctAnswer, question];
 };

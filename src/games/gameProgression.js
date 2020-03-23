@@ -11,14 +11,13 @@ const progression = () => {
   const list = [];
   const addition = generateRandomNum(10);
   const position = generateRandomNum(10);
-  let result = 0;
+  const startProgression = generateRandomNum(10);
   const progressionLength = 10;
   for (let i = 0; i < progressionLength; i += 1) {
-    result += addition;
-    list.push(result);
+    list.push(startProgression + addition * i);
   }
   // const correctAnswer = String(list[position]);
-  const correctAnswer = String(list[0] + addition * position);
+  const correctAnswer = String(startProgression + addition * position);
   list[position] = '..';
   const question = list.join(' ');
   return [correctAnswer, question];
