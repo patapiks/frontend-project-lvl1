@@ -1,30 +1,26 @@
 import game from '../index.js';
+import generateRandomNum from '../generateRandomNum.js';
 
-// Генерация случайного числа
-const generateRandomNum = (range) => {
-  const num = Math.floor(Math.random() * Math.floor(range));
-  return num;
-};
+const ruleOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const checkPrime = (num) => {
-  let correctAnswer = 'yes';
-  if (num < 2) correctAnswer = 'no';
+const isPrime = (num) => {
+  let correctAnswer = true;
+  if (num < 2) correctAnswer = false;
   for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) correctAnswer = 'no';
+    if (num % i === 0) correctAnswer = false;
   }
   return correctAnswer;
 };
 
 // Вопрос/Ответ
-const prime = () => {
-  const question = generateRandomNum(10);
-  const correctAnswer = checkPrime(question);
+const checkConditions = () => {
+  const question = generateRandomNum(0, 10);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [correctAnswer, question];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры
 const startGame = () => {
-  const ruleOfTheGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  game(ruleOfTheGame, prime);
+  game(ruleOfTheGame, checkConditions);
 };
 export default startGame;

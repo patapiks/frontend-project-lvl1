@@ -1,21 +1,17 @@
 import game from '../index.js';
+import generateRandomNum from '../generateRandomNum.js';
 
-// Генерация случайного числа
-const generateRandomNum = (range) => {
-  const num = Math.floor(Math.random() * Math.floor(range));
-  return num;
-};
+const ruleOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 // Вопрос/Ответ
-const even = () => {
-  const question = generateRandomNum(100);
+const checkConditions = () => {
+  const question = generateRandomNum(0, 100);
   const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
   return [correctAnswer, question];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры
 const startGame = () => {
-  const ruleOfTheGame = 'Answer "yes" if the number is even, otherwise answer "no".';
-  game(ruleOfTheGame, even);
+  game(ruleOfTheGame, checkConditions);
 };
 export default startGame;

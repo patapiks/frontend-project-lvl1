@@ -1,7 +1,10 @@
 import game from '../index.js';
+import generateRandomNum from '../generateRandomNum.js';
+
+const ruleOfTheGame = 'What is the result of the expression?';
 
 // Функция арифметической операции, операнд которой получен из строки
-const arifmOper = (num1, num2, oper) => {
+const getArithmeticOperation = (num1, num2, oper) => {
   switch (oper) {
     case '-':
       return num1 - num2;
@@ -12,26 +15,19 @@ const arifmOper = (num1, num2, oper) => {
   }
 };
 
-// Генерация случайного числа
-const generateRandomNum = (range) => {
-  const num = Math.floor(Math.random() * Math.floor(range));
-  return num;
-};
-
 // Вопрос/Ответ
-const calc = () => {
+const checkConditions = () => {
   const operation = '+-*';
-  const x = generateRandomNum(100);
-  const y = generateRandomNum(100);
-  const z = operation[generateRandomNum(3)];
-  const correctAnswer = String(arifmOper(x, y, z));
+  const x = generateRandomNum(0, 100);
+  const y = generateRandomNum(0, 100);
+  const z = operation[generateRandomNum(0, operation.length)];
+  const correctAnswer = String(getArithmeticOperation(x, y, z));
   const question = String(x + z + y);
   return [correctAnswer, question];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры
 const startGame = () => {
-  const ruleOfTheGame = 'What is the result of the expression?';
-  game(ruleOfTheGame, calc);
+  game(ruleOfTheGame, checkConditions);
 };
 export default startGame;
