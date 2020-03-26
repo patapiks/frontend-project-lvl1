@@ -1,17 +1,18 @@
 import readlineSync from 'readline-sync';
 
 // Общий игровой движок
-const game = (ruleOfTheGame, condition) => {
-  const rounds = 3;
+const play = (ruleOfTheGame, prepareCondition) => {
+  const roundsCount = 3;
 
   console.log('Welcome to the Brain Games!\n');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(ruleOfTheGame);
-  for (let count = 0; count < rounds; count += 1) {
-    const getCondition = condition();
-    console.log('Question: ', getCondition[1]);
-    const correctAnswer = getCondition[0];
+  for (let counter = 0; counter < roundsCount; counter += 1) {
+    // const condition = prepareCondition();
+    const [value, condition] = prepareCondition();
+    console.log('Question: ', condition);
+    const correctAnswer = value;
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
       console.log('Correct!');
@@ -23,4 +24,4 @@ const game = (ruleOfTheGame, condition) => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-export default game;
+export default play;

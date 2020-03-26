@@ -1,27 +1,26 @@
-import game from '../index.js';
+import play from '../index.js';
 import generateRandomNum from '../generateRandomNum.js';
 
-const ruleOfTheGame = 'Find the greatest common divisor of given numbers.';
+const ruleGame = 'Find the greatest common divisor of given numbers.';
 
 // Вопрос/Ответ
-const checkConditions = () => {
-  const list = [];
+const prepareConditions = () => {
+  const progression = [];
   const progressionLength = 5;
-  const addition = generateRandomNum(0, 10);
-  const position = generateRandomNum(0, progressionLength);
-  const startProgression = generateRandomNum(0, 10);
+  const increment = generateRandomNum(0, 10);
+  const positionHiddenNumber = generateRandomNum(0, progressionLength);
+  const startElement = generateRandomNum(0, 10);
   for (let i = 0; i < progressionLength; i += 1) {
-    list.push(startProgression + addition * i);
+    progression.push(startElement + increment * i);
   }
-  // const correctAnswer = String(list[position]);
-  const correctAnswer = String(startProgression + addition * position);
-  list[position] = '..';
-  const question = list.join(' ');
+  const correctAnswer = String(startElement + increment * positionHiddenNumber);
+  progression[positionHiddenNumber] = '..';
+  const question = progression.join(' ');
   return [correctAnswer, question];
 };
 
 // Функция запуска движка с аргументом приветсвия и условием игры
 const startGame = () => {
-  game(ruleOfTheGame, checkConditions);
+  play(ruleGame, prepareConditions);
 };
 export default startGame;
