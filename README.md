@@ -23,7 +23,7 @@
 Аскинемы:  
 [Проверка на четность](https://asciinema.org/a/1jBoXK30oM9vUNqUkWvX8QuyT) *установка + пример игры (победа/поражение)*  
 [Калькулятор](https://asciinema.org/a/l197HNTXH2pTmW6YlX9VE9D0f) *пример игры (победа/поражение)*  
-[НОД](https://asciinema.org/a/4gCVxXsqJAI67muqRX3W5mhfR) пример игры (победа/поражение)*  
-[Арифметическая прогрессия](https://asciinema.org/a/9wcXThakcLGZ8GGZF6KpA0K7g) пример игры (победа/поражение)*  
-[Простое ли число?](https://asciinema.org/a/MPL4zsixbmwhnqmYffeQjeCp6) пример игры (победа/поражение)*  
+[НОД](https://asciinema.org/a/4gCVxXsqJAI67muqRX3W5mhfR) *пример игры (победа/поражение)*  
+[Арифметическая прогрессия](https://asciinema.org/a/9wcXThakcLGZ8GGZF6KpA0K7g) *пример игры (победа/поражение)*  
+[Простое ли число?](https://asciinema.org/a/MPL4zsixbmwhnqmYffeQjeCp6) *пример игры (победа/поражение)*  
 
