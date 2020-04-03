@@ -1,7 +1,7 @@
 import generateRandomNum from '../generateRandomNum.js';
 import play from '../index.js';
 
-const ruleGame = 'What is the result of the expression?';
+const gameRule = 'What is the result of the expression?';
 
 const calculate = (num1, num2, oper) => {
   switch (oper) {
@@ -27,6 +27,6 @@ const prepareConditions = () => {
 };
 
 const startGame = () => {
-  play(ruleGame, prepareConditions);
+  play(gameRule, prepareConditions);
 };
 export default startGame;

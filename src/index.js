@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const play = (ruleGame, prepareCondition) => {
+const play = (gameRule, prepareCondition) => {
   const roundsCount = 3;
 
   console.log('Welcome to the Brain Games!\n');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log(ruleGame);
+  console.log(gameRule);
   for (let counter = 0; counter < roundsCount; counter += 1) {
     const [correctAnswer, question] = prepareCondition();
     console.log('Question: ', question);
